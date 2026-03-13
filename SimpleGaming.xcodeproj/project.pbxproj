@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C45D51E2F62FE3500A4C6BE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2C45D51D2F62FE3500A4C6BE /* Alamofire */; };
+		2C45D5232F62FE5800A4C6BE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2C45D5222F62FE5800A4C6BE /* Kingfisher */; };
+		2C45D5262F62FEE500A4C6BE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C45D5252F62FEE500A4C6BE /* FirebaseAuth */; };
+		2C45D5282F62FEE500A4C6BE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2C45D5272F62FEE500A4C6BE /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA00000AAA62EE42002BD7FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CF085B82F62EE42002BD7FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CF085BF2F62EE42002BD7FA;
+			remoteInfo = SimpleGaming;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2C45D4EE2F62FD7A00A4C6BE /* SimpleGaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SimpleGaming.xcodeproj; sourceTree = "<group>"; };
+		2C45D6A92F63029600A4C6BE /* SimpleGaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SimpleGaming.xcodeproj; sourceTree = "<group>"; };
+		2C45D6D52F63044700A4C6BE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		2C45DADF2F630CB800A4C6BE /* SimpleGaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SimpleGaming.xcodeproj; sourceTree = "<group>"; };
+		2C45DB502F6336A800A4C6BE /* SimpleGaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SimpleGaming.xcodeproj; sourceTree = "<group>"; };
+		2C45DBC02F6336CD00A4C6BE /* SimpleGaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SimpleGaming.xcodeproj; sourceTree = "<group>"; };
+		2CF085C02F62EE42002BD7FA /* SimpleGaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGaming.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA00000BAA62EE42002BD7FA /* SimpleGamingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleGamingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2CF085C22F62EE42002BD7FA /* SimpleGaming */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SimpleGaming;
+			sourceTree = "<group>";
+		};
+		AA000002AA62EE42002BD7FA /* SimpleGamingTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SimpleGamingTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CF085BD2F62EE42002BD7FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C45D5232F62FE5800A4C6BE /* Kingfisher in Frameworks */,
+				2C45D51E2F62FE3500A4C6BE /* Alamofire in Frameworks */,
+				2C45D5282F62FEE500A4C6BE /* FirebaseFirestore in Frameworks */,
+				2C45D5262F62FEE500A4C6BE /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA000004AA62EE42002BD7FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C45D4F02F62FD7A00A4C6BE /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C45D6AA2F63029600A4C6BE /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C45DAE02F630CB800A4C6BE /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C45DB512F6336A800A4C6BE /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C45DBC12F6336CD00A4C6BE /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CF085B72F62EE42002BD7FA = {
+			isa = PBXGroup;
+			children = (
+				2CF085C22F62EE42002BD7FA /* SimpleGaming */,
+				AA000002AA62EE42002BD7FA /* SimpleGamingTests */,
+				2CF085C12F62EE42002BD7FA /* Products */,
+				2C45D6D52F63044700A4C6BE /* Config.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		2CF085C12F62EE42002BD7FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CF085C02F62EE42002BD7FA /* SimpleGaming.app */,
+				AA00000BAA62EE42002BD7FA /* SimpleGamingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CF085BF2F62EE42002BD7FA /* SimpleGaming */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CF085CB2F62EE43002BD7FA /* Build configuration list for PBXNativeTarget "SimpleGaming" */;
+			buildPhases = (
+				2CF085BC2F62EE42002BD7FA /* Sources */,
+				2CF085BD2F62EE42002BD7FA /* Frameworks */,
+				2CF085BE2F62EE42002BD7FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2CF085C22F62EE42002BD7FA /* SimpleGaming */,
+			);
+			name = SimpleGaming;
+			packageProductDependencies = (
+				2C45D51D2F62FE3500A4C6BE /* Alamofire */,
+				2C45D5222F62FE5800A4C6BE /* Kingfisher */,
+				2C45D5252F62FEE500A4C6BE /* FirebaseAuth */,
+				2C45D5272F62FEE500A4C6BE /* FirebaseFirestore */,
+			);
+			productName = SimpleGaming;
+			productReference = 2CF085C02F62EE42002BD7FA /* SimpleGaming.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA000001AA62EE42002BD7FA /* SimpleGamingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA000008AA62EE42002BD7FA /* Build configuration list for PBXNativeTarget "SimpleGamingTests" */;
+			buildPhases = (
+				AA000003AA62EE42002BD7FA /* Sources */,
+				AA000004AA62EE42002BD7FA /* Frameworks */,
+				AA000005AA62EE42002BD7FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA000009AA62EE42002BD7FA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AA000002AA62EE42002BD7FA /* SimpleGamingTests */,
+			);
+			name = SimpleGamingTests;
+			packageProductDependencies = (
+			);
+			productName = SimpleGamingTests;
+			productReference = AA00000BAA62EE42002BD7FA /* SimpleGamingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CF085B82F62EE42002BD7FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					2CF085BF2F62EE42002BD7FA = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					AA000001AA62EE42002BD7FA = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = 2CF085BF2F62EE42002BD7FA;
+					};
+				};
+			};
+			buildConfigurationList = 2CF085BB2F62EE42002BD7FA /* Build configuration list for PBXProject "SimpleGaming" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2CF085B72F62EE42002BD7FA;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2C45D51C2F62FE3500A4C6BE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2C45D5212F62FE5800A4C6BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				2C45D5242F62FEE500A4C6BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2CF085C12F62EE42002BD7FA /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2C45DBC12F6336CD00A4C6BE /* Products */;
+					ProjectRef = 2C45DBC02F6336CD00A4C6BE /* SimpleGaming.xcodeproj */;
+				},
+				{
+					ProductGroup = 2C45D4F02F62FD7A00A4C6BE /* Products */;
+					ProjectRef = 2C45D4EE2F62FD7A00A4C6BE /* SimpleGaming.xcodeproj */;
+				},
+				{
+					ProductGroup = 2C45DB512F6336A800A4C6BE /* Products */;
+					ProjectRef = 2C45DB502F6336A800A4C6BE /* SimpleGaming.xcodeproj */;
+				},
+				{
+					ProductGroup = 2C45D6AA2F63029600A4C6BE /* Products */;
+					ProjectRef = 2C45D6A92F63029600A4C6BE /* SimpleGaming.xcodeproj */;
+				},
+				{
+					ProductGroup = 2C45DAE02F630CB800A4C6BE /* Products */;
+					ProjectRef = 2C45DADF2F630CB800A4C6BE /* SimpleGaming.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				2CF085BF2F62EE42002BD7FA /* SimpleGaming */,
+				AA000001AA62EE42002BD7FA /* SimpleGamingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CF085BE2F62EE42002BD7FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA000005AA62EE42002BD7FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CF085BC2F62EE42002BD7FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA000003AA62EE42002BD7FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA000009AA62EE42002BD7FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CF085BF2F62EE42002BD7FA /* SimpleGaming */;
+			targetProxy = AA00000AAA62EE42002BD7FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2CF085C92F62EE43002BD7FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C45D6D52F63044700A4C6BE /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2CF085CA2F62EE43002BD7FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C45D6D52F63044700A4C6BE /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CF085CC2F62EE43002BD7FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C45D6D52F63044700A4C6BE /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simovic.simplegaming;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2CF085CD2F62EE43002BD7FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C45D6D52F63044700A4C6BE /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simovic.simplegaming;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA000006AA62EE42002BD7FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C45D6D52F63044700A4C6BE /* Config.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simovic.SimpleGamingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleGaming.app/SimpleGaming";
+			};
+			name = Debug;
+		};
+		AA000007AA62EE42002BD7FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C45D6D52F63044700A4C6BE /* Config.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simovic.SimpleGamingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleGaming.app/SimpleGaming";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CF085BB2F62EE42002BD7FA /* Build configuration list for PBXProject "SimpleGaming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CF085C92F62EE43002BD7FA /* Debug */,
+				2CF085CA2F62EE43002BD7FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CF085CB2F62EE43002BD7FA /* Build configuration list for PBXNativeTarget "SimpleGaming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CF085CC2F62EE43002BD7FA /* Debug */,
+				2CF085CD2F62EE43002BD7FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA000008AA62EE42002BD7FA /* Build configuration list for PBXNativeTarget "SimpleGamingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA000006AA62EE42002BD7FA /* Debug */,
+				AA000007AA62EE42002BD7FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C45D51C2F62FE3500A4C6BE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+		2C45D5212F62FE5800A4C6BE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.8.0;
+			};
+		};
+		2C45D5242F62FEE500A4C6BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C45D51D2F62FE3500A4C6BE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C45D51C2F62FE3500A4C6BE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		2C45D5222F62FE5800A4C6BE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C45D5212F62FE5800A4C6BE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		2C45D5252F62FEE500A4C6BE /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C45D5242F62FEE500A4C6BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2C45D5272F62FEE500A4C6BE /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C45D5242F62FEE500A4C6BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 2CF085B82F62EE42002BD7FA /* Project object */;
+}

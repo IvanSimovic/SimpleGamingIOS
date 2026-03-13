@@ -1,0 +1,5 @@
+// RAWG API key — obtain from rawg.io/apidocs
+// Add this file to your Xcode target's build configuration.
+// Never commit this file to source control — it is git-ignored.
+RAWG_API_KEY = 4f38776b81314893a57a97b86af3eb90
+INFOPLIST_KEY_RAWG_API_KEY = $(RAWG_API_KEY)

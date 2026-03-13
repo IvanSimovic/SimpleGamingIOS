@@ -1,0 +1,16 @@
+--indent 4
+--tabwidth 4
+--swiftversion 6.0
+--maxwidth 120
+--trimwhitespace always
+--insertlines enabled
+--removelines enabled
+--allman false
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first
+--closingparen balanced
+--importgrouping testable-bottom
+--commas always
+--semicolons never
+--header strip

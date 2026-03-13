@@ -1,0 +1,40 @@
+included:
+  - SimpleGaming
+
+excluded:
+  - SimpleGaming/Data/RAWG/RAWGResponses.swift
+
+opt_in_rules:
+  - array_init
+  - closure_spacing
+  - empty_count
+  - first_where
+  - modifier_order
+  - prefer_zero_over_explicit_init
+  - sorted_imports
+  - toggle_bool
+  - vertical_whitespace_opening_braces
+
+disabled_rules:
+  - todo # Phase markers are not violations
+
+line_length:
+  warning: 120
+  error: 160
+
+type_body_length:
+  warning: 250
+  error: 350
+
+file_length:
+  warning: 400
+  error: 600
+
+identifier_name:
+  min_length: 2
+  excluded:
+    - id
+    - db
+
+force_cast: warning
+force_try: warning

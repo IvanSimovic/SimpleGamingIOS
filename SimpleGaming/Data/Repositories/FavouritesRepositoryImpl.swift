@@ -1,14 +1,29 @@
-// Phase 3: implement with FavouritesFirestoreSource.
+import Foundation
+
 struct FavouritesRepositoryImpl: FavouritesRepository {
-    func observeFavourites(userId: String) -> AsyncStream<[FavouriteGame]> {
-        AsyncStream { continuation in continuation.finish() }
+    private let source: FavouritesFirestoreSource
+
+    init(source: FavouritesFirestoreSource = FavouritesFirestoreSource()) {
+        self.source = source
     }
 
-    func add(game: FavouriteGame, userId: String) async throws {
-        preconditionFailure("FavouritesRepositoryImpl.add not implemented until Phase 3")
+    func observeFavourites(userId: String) -> AsyncStream<[FavouriteGame]> {
+        source.observeFavourites(userId: userId)
+    }
+
+    func add(game: Game, userId: String) async throws {
+        do {
+            try await source.add(game: game, userId: userId)
+        } catch {
+            throw AppError.firestoreError(error.localizedDescription)
+        }
     }
 
     func remove(gameId: Int, userId: String) async throws {
-        preconditionFailure("FavouritesRepositoryImpl.remove not implemented until Phase 3")
+        do {
+            try await source.remove(gameId: gameId, userId: userId)
+        } catch {
+            throw AppError.firestoreError(error.localizedDescription)
+        }
     }
 }

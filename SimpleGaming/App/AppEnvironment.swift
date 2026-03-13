@@ -34,9 +34,15 @@ extension AppEnvironment {
             searchGames: SearchGamesUseCase(search: { query in
                 try await rawgClient.searchGames(query: query)
             }),
-            addFavourite: AddFavouriteUseCase(add: { _, _ in }),
-            removeFavourite: RemoveFavouriteUseCase(remove: { _, _ in }),
-            fetchFavourites: FetchFavouritesUseCase(fetch: { _ in AsyncStream { _ in } }),
+            addFavourite: AddFavouriteUseCase(add: { game, userId in
+                try await favouritesRepository.add(game: game, userId: userId)
+            }),
+            removeFavourite: RemoveFavouriteUseCase(remove: { gameId, userId in
+                try await favouritesRepository.remove(gameId: gameId, userId: userId)
+            }),
+            fetchFavourites: FetchFavouritesUseCase(fetch: { userId in
+                favouritesRepository.observeFavourites(userId: userId)
+            }),
             fetchReels: FetchReelsUseCase(fetch: { _, _ in AsyncStream { _ in } })
         )
     }
@@ -70,7 +76,7 @@ private struct StubGameRepository: GameRepository {
 
 private struct StubFavouritesRepository: FavouritesRepository {
     func observeFavourites(userId: String) -> AsyncStream<[FavouriteGame]> { AsyncStream { _ in } }
-    func add(game: FavouriteGame, userId: String) async throws {}
+    func add(game: Game, userId: String) async throws {}
     func remove(gameId: Int, userId: String) async throws {}
 }
 

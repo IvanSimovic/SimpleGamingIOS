@@ -42,7 +42,7 @@ struct FavouritesFirestoreSource {
             Field.gameId: String(game.id),
             Field.name: game.name,
             Field.imageUrl: game.imageUrl ?? "",
-            Field.addedAt: FieldValue.serverTimestamp(),
+            Field.addedAt: FieldValue.serverTimestamp()
         ]
         try await db
             .collection(Collection.users)

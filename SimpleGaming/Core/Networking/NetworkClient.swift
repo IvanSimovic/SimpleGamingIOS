@@ -1,4 +1,5 @@
 import Alamofire
+import Foundation
 
 final class NetworkClient: Sendable {
     static let shared = NetworkClient()
@@ -6,6 +7,12 @@ final class NetworkClient: Sendable {
     let session: Session
 
     private init() {
-        session = Session(interceptor: Interceptor(adapters: [RAWGRequestAdapter()]))
+        let configuration = URLSessionConfiguration.af.default
+        configuration.timeoutIntervalForRequest = 15
+        configuration.waitsForConnectivity = true
+        session = Session(
+            configuration: configuration,
+            interceptor: Interceptor(adapters: [RAWGRequestAdapter()])
+        )
     }
 }

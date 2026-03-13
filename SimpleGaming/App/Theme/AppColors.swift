@@ -17,6 +17,14 @@ extension Color {
     static let appSuccess = Color.adaptive(light: 0x2E7D32, dark: 0x81C784)
     static let appWarning = Color.adaptive(light: 0xF9A825, dark: 0xFFF176)
     static let appDivider = Color.adaptive(light: 0xC4C7C8, dark: 0x444748)
+
+    // MARK: - Rating
+    static let metacriticGreen = Color(red: 0.298, green: 0.686, blue: 0.314)
+    static let metacriticYellow = Color(red: 1.0, green: 0.757, blue: 0.027)
+    static let metacriticRed = Color(red: 0.957, green: 0.263, blue: 0.212)
+
+    // MARK: - Interactive
+    static let favouriteActive = Color(red: 0.9, green: 0.22, blue: 0.21)
 }
 
 private extension Color {

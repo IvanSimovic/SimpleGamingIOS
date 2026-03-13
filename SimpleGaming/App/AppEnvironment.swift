@@ -12,7 +12,8 @@ struct AppEnvironment {
     let addFavourite: AddFavouriteUseCase
     let removeFavourite: RemoveFavouriteUseCase
     let fetchFavourites: FetchFavouritesUseCase
-    let fetchReels: FetchReelsUseCase
+    let fetchReelIds: FetchReelIdsUseCase
+    let fetchReelGame: FetchReelGameUseCase
 }
 
 extension AppEnvironment {
@@ -43,7 +44,13 @@ extension AppEnvironment {
             fetchFavourites: FetchFavouritesUseCase(fetch: { userId in
                 favouritesRepository.observeFavourites(userId: userId)
             }),
-            fetchReels: FetchReelsUseCase(fetch: { _, _ in AsyncStream { _ in } })
+            fetchReelIds: FetchReelIdsUseCase(fetch: {
+                reelsRepository.fetchReelGameIds()
+            }),
+            fetchReelGame: FetchReelGameUseCase(
+                fetchGame: { id in try await gameRepository.fetchGame(id: id) },
+                fetchScreenshots: { id in try await gameRepository.fetchScreenshots(gameId: id) }
+            )
         )
     }
 
@@ -58,7 +65,11 @@ extension AppEnvironment {
             addFavourite: AddFavouriteUseCase(add: { _, _ in }),
             removeFavourite: RemoveFavouriteUseCase(remove: { _, _ in }),
             fetchFavourites: FetchFavouritesUseCase(fetch: { _ in AsyncStream { _ in } }),
-            fetchReels: FetchReelsUseCase(fetch: { _, _ in AsyncStream { _ in } })
+            fetchReelIds: FetchReelIdsUseCase(fetch: { AsyncStream { _ in } }),
+            fetchReelGame: FetchReelGameUseCase(
+                fetchGame: { _ in throw AppError.notFound },
+                fetchScreenshots: { _ in [] }
+            )
         )
     }
 }

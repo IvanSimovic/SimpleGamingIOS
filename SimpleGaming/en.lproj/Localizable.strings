@@ -27,6 +27,14 @@
 "add_game_search_failed" = "Search failed";
 "add_game_no_results" = "No results";
 
+// MARK: - Accessibility
+"accessibility_add_game" = "Add game";
+"accessibility_add_to_favourites" = "Add to favourites";
+"accessibility_remove_from_favourites" = "Remove from favourites";
+"accessibility_clear_search" = "Clear search";
+"accessibility_delete_game" = "Delete game";
+"accessibility_already_added" = "Added";
+
 // MARK: - Errors
 "error_unauthenticated" = "You are not signed in.";
 "error_not_found" = "The requested resource was not found.";

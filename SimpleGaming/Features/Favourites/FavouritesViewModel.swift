@@ -14,7 +14,9 @@ final class FavouritesViewModel {
     private let fetchFavourites: FetchFavouritesUseCase
     private let removeFavourite: RemoveFavouriteUseCase
     private let authService: any AuthService
+    private(set) var removeError: AppError?
     nonisolated(unsafe) private var removeTask: Task<Void, Never>?
+    nonisolated(unsafe) private var removeErrorTask: Task<Void, Never>?
 
     init(
         fetchFavourites: FetchFavouritesUseCase,
@@ -41,8 +43,29 @@ final class FavouritesViewModel {
 
     func remove(gameId: Int) {
         guard let userId = authService.currentUserId else { return }
-        removeTask = Task { try? await removeFavourite(gameId: gameId, userId: userId) }
+        removeTask = Task {
+            do {
+                try await removeFavourite(gameId: gameId, userId: userId)
+            } catch let error as AppError {
+                removeError = error
+                scheduleErrorClear()
+            } catch {
+                removeError = .unknown(error.localizedDescription)
+                scheduleErrorClear()
+            }
+        }
     }
 
-    deinit { removeTask?.cancel() }
+    private func scheduleErrorClear() {
+        removeErrorTask?.cancel()
+        removeErrorTask = Task {
+            try? await Task.sleep(for: .seconds(3))
+            removeError = nil
+        }
+    }
+
+    deinit {
+        removeTask?.cancel()
+        removeErrorTask?.cancel()
+    }
 }

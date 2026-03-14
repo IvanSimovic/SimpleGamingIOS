@@ -29,6 +29,7 @@ struct AddGameView: View {
             .navigationTitle("add_game_title")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .toast(message: viewModel.state.addError?.errorDescription)
     }
 
     private var searchBar: some View {
@@ -49,6 +50,7 @@ struct AddGameView: View {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundStyle(Color.textMuted)
                 }
+                .accessibilityLabel(Text("accessibility_clear_search"))
             }
         }
         .padding(.horizontal, AppDimen.spaceM)
@@ -129,6 +131,7 @@ private struct GameRow: View {
                 Image(systemName: "checkmark.circle.fill")
                     .foregroundStyle(Color.appSuccess)
                     .font(AppFont.iconRegular)
+                    .accessibilityLabel(Text("accessibility_already_added"))
             } else {
                 Button(action: onAdd) {
                     Image(systemName: "plus.circle")

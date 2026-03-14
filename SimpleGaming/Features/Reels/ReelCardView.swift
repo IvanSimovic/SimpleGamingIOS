@@ -110,6 +110,7 @@ struct ReelCardView: View {
                 .padding(12)
                 .background(Color.black.opacity(0.35), in: Circle())
         }
+        .accessibilityLabel(Text(isFavourite ? "accessibility_remove_from_favourites" : "accessibility_add_to_favourites"))
     }
 
     private func cardInfoOverlay(_ game: ReelGame) -> some View {

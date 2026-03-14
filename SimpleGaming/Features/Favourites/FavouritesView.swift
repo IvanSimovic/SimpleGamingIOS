@@ -45,6 +45,7 @@ struct FavouritesView: View {
                 authService: authService
             )
         }
+        .toast(message: viewModel.removeError?.errorDescription)
     }
 
     @ViewBuilder
@@ -129,6 +130,7 @@ struct FavouritesView: View {
                     .clipShape(Circle())
                     .shadow(color: .black.opacity(0.25), radius: 6, x: 0, y: 3)
             }
+            .accessibilityLabel(Text("accessibility_add_game"))
             .padding(.trailing, AppDimen.fabPadding)
             .padding(.bottom, AppDimen.fabPadding)
         }
@@ -155,6 +157,9 @@ private struct GameCell: View {
             .clipShape(RoundedRectangle(cornerRadius: AppDimen.cardCornerRadius))
             .offset(x: shakeOffset)
             .onLongPressGesture { onLongPress() }
+            .accessibilityLabel(game.name)
+            .accessibilityAddTraits(.isButton)
+            .accessibilityAction(named: Text("accessibility_delete_game")) { onLongPress() }
             .onChange(of: isSelected) { _, selected in
                 shakeTask?.cancel()
                 if selected {

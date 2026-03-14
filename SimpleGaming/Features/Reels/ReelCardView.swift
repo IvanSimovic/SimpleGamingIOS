@@ -27,7 +27,7 @@ struct ReelCardView: View {
             case .loaded(let game):
                 loadedCard(game)
             case .failed:
-                Text("Failed to load")
+                Text("reels_card_failed")
                     .font(AppFont.body2)
                     .foregroundStyle(Color.textMuted)
             }
@@ -150,7 +150,7 @@ struct ReelCardView: View {
             HStack(spacing: 12) {
                 if let score = game.metacriticScore { metacriticBadge(score) }
                 if let rating = game.rating, rating > 0 {
-                    Text("★ \(String(format: "%.1f", rating))")
+                    Text(String(format: String(localized: "reels_rating_format"), rating))
                         .font(AppFont.body2)
                         .foregroundStyle(.white)
                 }
@@ -196,7 +196,7 @@ struct ReelCardView: View {
         if (game.playtime ?? 0) > 0 || !game.platforms.isEmpty {
             HStack(spacing: 12) {
                 if let playtime = game.playtime, playtime > 0 {
-                    Text("🕹 \(playtime)h")
+                    Text(String(format: String(localized: "reels_playtime_format"), playtime))
                         .font(AppFont.body3)
                         .foregroundStyle(.white.opacity(0.75))
                 }

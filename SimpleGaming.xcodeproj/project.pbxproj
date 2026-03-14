@@ -31,6 +31,7 @@
 		2C45DB502F6336A800A4C6BE /* SimpleGaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SimpleGaming.xcodeproj; sourceTree = "<group>"; };
 		2C45DBC02F6336CD00A4C6BE /* SimpleGaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SimpleGaming.xcodeproj; sourceTree = "<group>"; };
 		2C45DC332F63FCA200A4C6BE /* SimpleGaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SimpleGaming.xcodeproj; sourceTree = "<group>"; };
+		2CC8D0F62F64687A001D2B52 /* SimpleGaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SimpleGaming.xcodeproj; sourceTree = "<group>"; };
 		2CF085C02F62EE42002BD7FA /* SimpleGaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGaming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA00000BAA62EE42002BD7FA /* SimpleGamingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleGamingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +97,11 @@
 			sourceTree = "<group>";
 		};
 		2C45DC342F63FCA200A4C6BE /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CC8D0F72F64687A001D2B52 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -215,6 +221,10 @@
 				{
 					ProductGroup = 2C45D4F02F62FD7A00A4C6BE /* Products */;
 					ProjectRef = 2C45D4EE2F62FD7A00A4C6BE /* SimpleGaming.xcodeproj */;
+				},
+				{
+					ProductGroup = 2CC8D0F72F64687A001D2B52 /* Products */;
+					ProjectRef = 2CC8D0F62F64687A001D2B52 /* SimpleGaming.xcodeproj */;
 				},
 				{
 					ProductGroup = 2C45DB512F6336A800A4C6BE /* Products */;

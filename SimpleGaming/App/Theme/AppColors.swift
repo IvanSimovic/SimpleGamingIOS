@@ -25,6 +25,8 @@ extension Color {
 
     // MARK: - Interactive
     static let favouriteActive = Color(red: 0.9, green: 0.22, blue: 0.21)
+    static let overlayDark = Color.black.opacity(0.6)
+    static let onBrand = Color.white
 }
 
 private extension Color {

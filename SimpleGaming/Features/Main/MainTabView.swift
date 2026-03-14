@@ -14,13 +14,19 @@ struct MainTabView: View {
                 authService: env.authService
             )
             .tabItem {
-                Label("Reels", systemImage: "gamecontroller.fill")
+                Label("tab_reels", systemImage: "gamecontroller.fill")
             }
 
-            FavouritesView()
-                .tabItem {
-                    Label("Favourites", systemImage: "heart.fill")
-                }
+            FavouritesView(
+                fetchFavourites: env.fetchFavourites,
+                removeFavourite: env.removeFavourite,
+                searchGames: env.searchGames,
+                addFavourite: env.addFavourite,
+                authService: env.authService
+            )
+            .tabItem {
+                Label("tab_favourites", systemImage: "heart.fill")
+            }
         }
         .tint(Color.brandPrimary)
     }

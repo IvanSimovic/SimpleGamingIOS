@@ -15,9 +15,9 @@ extension AppError: LocalizedError {
         switch self {
         case .networkError(_, let message): message
         case .authFailed(let message): message
-        case .unauthenticated: "You are not signed in."
-        case .notFound: "The requested resource was not found."
-        case .decodingFailed: "The response could not be read."
+        case .unauthenticated: String(localized: "error_unauthenticated")
+        case .notFound: String(localized: "error_not_found")
+        case .decodingFailed: String(localized: "error_decoding_failed")
         case .firestoreError(let message): message
         case .unknown(let message): message
         }

@@ -15,4 +15,6 @@ enum AppFont {
     static let body5 = Font.system(size: 14, weight: .light)
     static let body6 = Font.system(size: 14, weight: .medium)
     static let body7 = Font.system(size: 10, weight: .bold)
+    static let iconRegular = Font.system(size: 22)
+    static let iconSemibold = Font.system(size: 22, weight: .semibold)
 }

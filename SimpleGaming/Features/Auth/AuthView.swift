@@ -12,12 +12,12 @@ struct AuthView: View {
             Color.appBackground.ignoresSafeArea()
 
             VStack(spacing: 32) {
-                Text("SimpleGaming")
+                Text("auth_title")
                     .font(AppFont.head1)
                     .foregroundStyle(Color.brandPrimary)
 
                 VStack(spacing: 16) {
-                    TextField("Email", text: $viewModel.email)
+                    TextField("auth_email_placeholder", text: $viewModel.email)
                         .textContentType(.emailAddress)
                         .keyboardType(.emailAddress)
                         .autocorrectionDisabled()
@@ -26,7 +26,7 @@ struct AuthView: View {
                         .background(Color.appSurface)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
 
-                    SecureField("Password", text: $viewModel.password)
+                    SecureField("auth_password_placeholder", text: $viewModel.password)
                         .textContentType(.password)
                         .padding()
                         .background(Color.appSurface)
@@ -48,7 +48,7 @@ struct AuthView: View {
                             ProgressView()
                                 .tint(.white)
                         } else {
-                            Text("Sign In")
+                            Text("auth_sign_in")
                                 .font(AppFont.body1)
                                 .foregroundStyle(.white)
                         }

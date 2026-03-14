@@ -37,11 +37,11 @@ struct ReelsView: View {
             ProgressView()
                 .tint(Color.textMuted)
         case .empty:
-            Text("No games available")
+            Text("reels_empty")
                 .font(AppFont.body1)
                 .foregroundStyle(Color.textMuted)
         case .failed(let error):
-            Text(error.errorDescription ?? "Something went wrong")
+            Text(error.errorDescription ?? String(localized: "error_generic"))
                 .font(AppFont.body1)
                 .foregroundStyle(Color.appError)
                 .multilineTextAlignment(.center)

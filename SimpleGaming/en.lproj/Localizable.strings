@@ -1,0 +1,35 @@
+// MARK: - Tabs
+"tab_reels" = "Reels";
+"tab_favourites" = "Favourites";
+
+// MARK: - Auth
+"auth_title" = "SimpleGaming";
+"auth_email_placeholder" = "Email";
+"auth_password_placeholder" = "Password";
+"auth_sign_in" = "Sign In";
+
+// MARK: - Reels
+"reels_empty" = "No games available";
+"reels_card_failed" = "Failed to load";
+"reels_rating_format" = "★ %.1f";
+"reels_playtime_format" = "🕹 %dh";
+
+// MARK: - Favourites
+"favourites_error" = "Something went wrong";
+"favourites_empty" = "No favourites yet";
+"favourites_remove" = "REMOVE";
+"favourites_cancel" = "CANCEL";
+
+// MARK: - Add Game
+"add_game_title" = "Add Game";
+"add_game_search_placeholder" = "Search games...";
+"add_game_search_hint" = "Type to search";
+"add_game_search_failed" = "Search failed";
+"add_game_no_results" = "No results";
+
+// MARK: - Errors
+"error_unauthenticated" = "You are not signed in.";
+"error_not_found" = "The requested resource was not found.";
+"error_decoding_failed" = "The response could not be read.";
+"error_stream_terminated" = "Connection ended unexpectedly.";
+"error_generic" = "Something went wrong";

@@ -11,8 +11,8 @@ private enum Field {
 struct ReelsFirestoreSource {
     private static let pageSize = 50
 
-    func fetchReelGameIds() -> AsyncStream<[Int]> {
-        AsyncStream { continuation in
+    func fetchReelGameIds() -> AsyncThrowingStream<[Int], Error> {
+        AsyncThrowingStream { continuation in
             Task {
                 do {
                     let snapshot = try await Firestore.firestore()
@@ -23,8 +23,10 @@ struct ReelsFirestoreSource {
 
                     let ids = snapshot.documents.compactMap { Int($0.documentID) }
                     continuation.yield(ids)
-                } catch {}
-                continuation.finish()
+                    continuation.finish()
+                } catch {
+                    continuation.finish(throwing: error)
+                }
             }
         }
     }

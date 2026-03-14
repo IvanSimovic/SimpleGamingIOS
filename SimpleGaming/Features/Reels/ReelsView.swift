@@ -27,6 +27,7 @@ struct ReelsView: View {
             Color.appBackground.ignoresSafeArea()
             content
         }
+        .toast(message: viewModel.toggleError?.errorDescription)
         .task { await viewModel.load() }
     }
 

@@ -12,7 +12,6 @@ struct ReelCardView: View {
     private let topScrimEnd = UnitPoint(x: 0.5, y: 0.2)
     private let bottomScrimStart = UnitPoint(x: 0.5, y: 0.35)
 
-
     var body: some View {
         ZStack {
             Color.appBackground
@@ -64,7 +63,7 @@ struct ReelCardView: View {
         }
         .overlay(alignment: .topTrailing) {
             heartButton
-                .padding(.top, 90)
+                .padding(.top, AppDimen.reelHeartTopPadding)
                 .padding(.trailing, 16)
         }
     }
@@ -107,7 +106,9 @@ struct ReelCardView: View {
                 .padding(12)
                 .background(Color.black.opacity(0.35), in: Circle())
         }
-        .accessibilityLabel(Text(isFavourite ? "accessibility_remove_from_favourites" : "accessibility_add_to_favourites"))
+        .accessibilityLabel(
+            Text(isFavourite ? "accessibility_remove_from_favourites" : "accessibility_add_to_favourites")
+        )
     }
 
     private func cardInfoOverlay(_ game: ReelGame) -> some View {
@@ -140,7 +141,7 @@ struct ReelCardView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 16)
-        .padding(.bottom, 90)
+        .padding(.bottom, AppDimen.reelInfoBottomPadding)
     }
 
     @ViewBuilder

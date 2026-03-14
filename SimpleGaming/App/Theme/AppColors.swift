@@ -6,7 +6,7 @@ extension Color {
 
     // MARK: - Background
     static let appBackground = Color.adaptive(light: 0xFDFCFF, dark: 0x1A1C1E)
-    static let appSurface = Color.adaptive(light: 0xFDFCFF, dark: 0x2D2F31)
+    static let appSurface = Color.adaptive(light: 0xEEEEF3, dark: 0x2D2F31)
 
     // MARK: - Text
     static let textMain = Color.adaptive(light: 0x1A1C1E, dark: 0xE2E2E6)

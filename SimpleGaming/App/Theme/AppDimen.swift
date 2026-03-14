@@ -28,4 +28,9 @@ enum AppDimen {
     static let fabSize: CGFloat = 56
     static let fabPadding: CGFloat = 24
     static let fabClearance: CGFloat = 96
+
+    // MARK: - Reels full-screen card
+    // Clears the status bar + notch area at the top, and the tab bar + home indicator at the bottom.
+    static let reelHeartTopPadding: CGFloat = 90
+    static let reelInfoBottomPadding: CGFloat = 90
 }

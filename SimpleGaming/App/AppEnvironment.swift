@@ -65,7 +65,7 @@ extension AppEnvironment {
             addFavourite: AddFavouriteUseCase(add: { _, _ in }),
             removeFavourite: RemoveFavouriteUseCase(remove: { _, _ in }),
             fetchFavourites: FetchFavouritesUseCase(fetch: { _ in AsyncStream { _ in } }),
-            fetchReelIds: FetchReelIdsUseCase(fetch: { AsyncStream { _ in } }),
+            fetchReelIds: FetchReelIdsUseCase(fetch: { AsyncThrowingStream { $0.finish() } }),
             fetchReelGame: FetchReelGameUseCase(
                 fetchGame: { _ in throw AppError.notFound },
                 fetchScreenshots: { _ in [] }
@@ -92,7 +92,7 @@ private struct StubFavouritesRepository: FavouritesRepository {
 }
 
 private struct StubReelsRepository: ReelsRepository {
-    func fetchReelGameIds() -> AsyncStream<[Int]> { AsyncStream { _ in } }
+    func fetchReelGameIds() -> AsyncThrowingStream<[Int], Error> { AsyncThrowingStream { $0.finish() } }
 }
 
 private struct AppEnvironmentKey: EnvironmentKey {

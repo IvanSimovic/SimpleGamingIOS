@@ -10,7 +10,7 @@ enum SearchState: Sendable, Equatable {
 struct AddGameState: Sendable, Equatable {
     var search: SearchState = .idle
     var addedGameIds: Set<Int> = []
-    var addError: AppError? = nil
+    var addError: AppError?
 }
 
 @Observable

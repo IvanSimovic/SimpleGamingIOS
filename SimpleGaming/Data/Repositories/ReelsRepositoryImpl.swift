@@ -5,7 +5,7 @@ struct ReelsRepositoryImpl: ReelsRepository {
         self.source = source
     }
 
-    func fetchReelGameIds() -> AsyncStream<[Int]> {
+    func fetchReelGameIds() -> AsyncThrowingStream<[Int], Error> {
         source.fetchReelGameIds()
     }
 }

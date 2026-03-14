@@ -19,9 +19,12 @@ final class ReelsViewModel {
     private let removeFavourite: RemoveFavouriteUseCase
     private let authService: any AuthService
 
+    private(set) var toggleError: AppError?
+
     private var fetchTasks: [Int: Task<Void, Never>] = [:]
     private var favouritesTask: Task<Void, Never>?
-    private var toggleTask: Task<Void, Never>?
+    nonisolated(unsafe) private var toggleTask: Task<Void, Never>?
+    nonisolated(unsafe) private var toggleErrorTask: Task<Void, Never>?
     private var currentFavouriteIds: Set<Int> = []
 
     init(
@@ -56,14 +59,18 @@ final class ReelsViewModel {
             }
         }
 
-        let ids = await fetchReelIds()
-        guard !ids.isEmpty else {
-            state = .empty
-            return
+        do {
+            let ids = try await fetchReelIds()
+            guard !ids.isEmpty else {
+                state = .empty
+                return
+            }
+            state = .ready(cards: ids.map { .loading(id: $0) }, favouriteIds: currentFavouriteIds)
+            prefetch(index: 0)
+            prefetch(index: 1)
+        } catch {
+            state = .failed(error as? AppError ?? .unknown(error.localizedDescription))
         }
-        state = .ready(cards: ids.map { .loading(id: $0) }, favouriteIds: currentFavouriteIds)
-        prefetch(index: 0)
-        prefetch(index: 1)
     }
 
     func didPageTo(index: Int) {
@@ -74,15 +81,36 @@ final class ReelsViewModel {
         guard let userId = authService.currentUserId else { return }
         toggleTask?.cancel()
         toggleTask = Task {
-            if currentFavouriteIds.contains(game.id) {
-                try? await removeFavourite(gameId: game.id, userId: userId)
-            } else {
-                try? await addFavourite(
-                    game: Game(id: game.id, name: game.name, imageUrl: game.heroImageUrl),
-                    userId: userId
-                )
+            do {
+                if currentFavouriteIds.contains(game.id) {
+                    try await removeFavourite(gameId: game.id, userId: userId)
+                } else {
+                    try await addFavourite(
+                        game: Game(id: game.id, name: game.name, imageUrl: game.heroImageUrl),
+                        userId: userId
+                    )
+                }
+            } catch let error as AppError {
+                toggleError = error
+                scheduleToggleErrorClear()
+            } catch {
+                toggleError = .unknown(error.localizedDescription)
+                scheduleToggleErrorClear()
             }
         }
+    }
+
+    private func scheduleToggleErrorClear() {
+        toggleErrorTask?.cancel()
+        toggleErrorTask = Task {
+            try? await Task.sleep(for: .seconds(3))
+            toggleError = nil
+        }
+    }
+
+    deinit {
+        toggleTask?.cancel()
+        toggleErrorTask?.cancel()
     }
 
     private func updateFavouriteIds(_ ids: Set<Int>) {

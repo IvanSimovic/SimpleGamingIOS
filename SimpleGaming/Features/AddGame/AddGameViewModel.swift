@@ -9,7 +9,7 @@ enum SearchState: Sendable, Equatable {
 
 struct AddGameState: Sendable, Equatable {
     var search: SearchState = .idle
-    var addedGameId: Int? = nil
+    var addedGameIds: Set<Int> = []
     var addError: AppError? = nil
 }
 
@@ -23,7 +23,6 @@ final class AddGameViewModel {
     private let authService: any AuthService
 
     nonisolated(unsafe) private var searchTask: Task<Void, Never>?
-    nonisolated(unsafe) private var confirmTask: Task<Void, Never>?
     nonisolated(unsafe) private var errorTask: Task<Void, Never>?
 
     init(
@@ -62,13 +61,8 @@ final class AddGameViewModel {
         Task {
             do {
                 try await addFavourite(game: game, userId: userId)
-                state.addedGameId = game.id
+                state.addedGameIds.insert(game.id)
                 state.addError = nil
-                confirmTask?.cancel()
-                confirmTask = Task {
-                    try? await Task.sleep(for: .seconds(2))
-                    state.addedGameId = nil
-                }
             } catch let error as AppError {
                 state.addError = error
                 scheduleErrorClear()
@@ -89,7 +83,6 @@ final class AddGameViewModel {
 
     deinit {
         searchTask?.cancel()
-        confirmTask?.cancel()
         errorTask?.cancel()
     }
 }

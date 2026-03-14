@@ -12,15 +12,10 @@ struct ReelCardView: View {
     private let topScrimEnd = UnitPoint(x: 0.5, y: 0.2)
     private let bottomScrimStart = UnitPoint(x: 0.5, y: 0.35)
 
-    private var topSafeArea: CGFloat {
-        UIApplication.shared.connectedScenes
-            .compactMap { $0 as? UIWindowScene }
-            .first?.windows.first(where: \.isKeyWindow)?.safeAreaInsets.top ?? 44
-    }
 
     var body: some View {
         ZStack {
-            Color.appBackground.ignoresSafeArea()
+            Color.appBackground
             switch state {
             case .loading:
                 loadingSkeleton
@@ -69,17 +64,21 @@ struct ReelCardView: View {
         }
         .overlay(alignment: .topTrailing) {
             heartButton
-                .padding(.top, topSafeArea + 8)
+                .padding(.top, 90)
                 .padding(.trailing, 16)
         }
     }
 
     private func heroImage(_ url: String?) -> some View {
-        KFImage(URL(string: url ?? ""))
-            .resizable()
-            .scaledToFill()
-            .ignoresSafeArea()
-            .allowsHitTesting(false)
+        GeometryReader { proxy in
+            KFImage(URL(string: url ?? ""))
+                .resizable()
+                .scaledToFill()
+                .frame(width: proxy.size.width, height: proxy.size.height)
+                .clipped()
+                .allowsHitTesting(false)
+        }
+        .ignoresSafeArea()
     }
 
     private var topScrim: some View {
@@ -88,7 +87,6 @@ struct ReelCardView: View {
             startPoint: .top,
             endPoint: topScrimEnd
         )
-        .ignoresSafeArea()
         .allowsHitTesting(false)
     }
 
@@ -98,7 +96,6 @@ struct ReelCardView: View {
             startPoint: bottomScrimStart,
             endPoint: .bottom
         )
-        .ignoresSafeArea()
         .allowsHitTesting(false)
     }
 
@@ -141,8 +138,9 @@ struct ReelCardView: View {
 
             platformRow(game)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 16)
-        .padding(.bottom, 24)
+        .padding(.bottom, 90)
     }
 
     @ViewBuilder

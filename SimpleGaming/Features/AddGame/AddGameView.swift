@@ -93,7 +93,7 @@ struct AddGameView: View {
                     ForEach(games) { game in
                         GameRow(
                             game: game,
-                            isAdded: viewModel.state.addedGameId == game.id,
+                            isAdded: viewModel.state.addedGameIds.contains(game.id),
                             onAdd: { viewModel.addGame(game) }
                         )
                         Divider()

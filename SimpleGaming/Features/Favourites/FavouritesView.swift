@@ -145,8 +145,7 @@ private struct GameCell: View {
     let onDelete: () -> Void
     let onCancel: () -> Void
 
-    @State private var shakeOffset: CGFloat = 0
-    @State private var shakeTask: Task<Void, Never>?
+    @State private var shakeAmount: CGFloat = 0
 
     var body: some View {
         Color.appSurface
@@ -155,27 +154,16 @@ private struct GameCell: View {
             .overlay(dimContent.allowsHitTesting(false))
             .overlay(deleteContent)
             .clipShape(RoundedRectangle(cornerRadius: AppDimen.cardCornerRadius))
-            .offset(x: shakeOffset)
+            .modifier(ShakeEffect(animatableData: shakeAmount))
             .onLongPressGesture { onLongPress() }
             .accessibilityLabel(game.name)
             .accessibilityAddTraits(.isButton)
             .accessibilityAction(named: Text("accessibility_delete_game")) { onLongPress() }
             .onChange(of: isSelected) { _, selected in
-                shakeTask?.cancel()
                 if selected {
-                    shakeTask = Task {
-                        do {
-                            for _ in 0..<4 {
-                                withAnimation(.linear(duration: 0.05)) { shakeOffset = 8 }
-                                try await Task.sleep(for: .milliseconds(50))
-                                withAnimation(.linear(duration: 0.05)) { shakeOffset = -8 }
-                                try await Task.sleep(for: .milliseconds(50))
-                            }
-                            withAnimation(.linear(duration: 0.05)) { shakeOffset = 0 }
-                        } catch {}
+                    withAnimation(.easeOut(duration: 0.4)) {
+                        shakeAmount += 1
                     }
-                } else {
-                    shakeOffset = 0
                 }
             }
     }
@@ -239,5 +227,14 @@ private struct GameCell: View {
                 .padding(.bottom, AppDimen.listRowVerticalPadding)
             }
         }
+    }
+}
+
+private struct ShakeEffect: GeometryEffect {
+    var animatableData: CGFloat
+
+    func effectValue(size: CGSize) -> ProjectionTransform {
+        let translation = 8 * sin(animatableData * .pi * 4)
+        return ProjectionTransform(CGAffineTransform(translationX: translation, y: 0))
     }
 }
